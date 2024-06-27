@@ -20,8 +20,8 @@ import (
 // @Produce json
 // @Success 200 {object} Ayam
 // @Router /presensi [get]
-func GetAyam(c *fiber.Ctx) error {
-	ps := cek.GetAllAyam(config.Ulbimongoconn, "ayamku")
+func GetOrder(c *fiber.Ctx) error {
+	ps := cek.GetAllOrder(config.Ulbimongoconn, "orderku")
 	return c.JSON(ps)
 }
 
@@ -37,7 +37,7 @@ func GetAyam(c *fiber.Ctx) error {
 // @Failure 404
 // @Failure 500
 // @Router /presensi/{id} [get]
-func GetAyamID(c *fiber.Ctx) error {
+func GetOrderID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -52,7 +52,7 @@ func GetAyamID(c *fiber.Ctx) error {
 			"message": "Invalid id parameter",
 		})
 	}
-	ps, err := cek.GetAyamFromID(objID, config.Ulbimongoconn, "ayamku")
+	ps, err := cek.GetOrderFromID(objID, config.Ulbimongoconn, "orderku")
 	if err != nil {
 		if errors.Is(err, mongo.ErrNoDocuments) {
 			return c.Status(http.StatusNotFound).JSON(fiber.Map{
@@ -79,22 +79,19 @@ func GetAyamID(c *fiber.Ctx) error {
 // @Failure 400
 // @Failure 500
 // @Router /ins [post]
-func InsertDataAyam(c *fiber.Ctx) error {
+func InsertDataOrder(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
-	var ayam inimodel.Ayam
-	if err := c.BodyParser(&ayam); err != nil {
+	var order inimodel.Order
+	if err := c.BodyParser(&order); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
 			"message": err.Error(),
 		})
 	}
-	insertedID, err := cek.InsertAyam(db, "ayamku",
-		ayam.Jenis,
-		ayam.Umur,
-		ayam.Bobot,
-		ayam.Tinggi,
-		ayam.Jenis_Kelamin,
-		ayam.Harga)
+	insertedID, err := cek.InsertOrder(db, "orderku",
+		order.Ayam,
+		order.Nama_Pemesan,
+		order.Alamat,)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
@@ -120,7 +117,7 @@ func InsertDataAyam(c *fiber.Ctx) error {
 // @Failure 400
 // @Failure 500
 // @Router /update/{id} [put]
-func UpdateData(c *fiber.Ctx) error {
+func UpdateDataOrder(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
 	// Get the ID from the URL parameter
@@ -136,23 +133,20 @@ func UpdateData(c *fiber.Ctx) error {
 	}
 
 	// Parse the request body into a Presensi object
-	var ayam inimodel.Ayam
-	if err := c.BodyParser(&ayam); err != nil {
+	var order inimodel.Order
+	if err := c.BodyParser(&order); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
 			"message": err.Error(),
 		})
 	}
 
-	// Call the UpdateAyam function with the parsed ID and the Ayam object
-	err = cek.UpdateAyam(db, "ayamku",
+	// Call the UpdateOrder function with the parsed ID and the Ayam object
+	err = cek.UpdateOrder(db, "orderku",
 		objectID,
-		ayam.Jenis,
-		ayam.Umur,
-		ayam.Bobot,
-		ayam.Tinggi,
-		ayam.Jenis_Kelamin,
-		ayam.Harga)
+		order.Ayam,
+		order.Nama_Pemesan,
+		order.Alamat,)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
@@ -177,7 +171,7 @@ func UpdateData(c *fiber.Ctx) error {
 // @Failure 400
 // @Failure 500
 // @Router /delete/{id} [delete]
-func DeleteAyamByID(c *fiber.Ctx) error {
+func DeleteOrderByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -194,7 +188,7 @@ func DeleteAyamByID(c *fiber.Ctx) error {
 		})
 	}
 
-	err = cek.DeleteAyamByID(objID, config.Ulbimongoconn, "ayamku")
+	err = cek.DeleteOrderByID(objID, config.Ulbimongoconn, "orderku")
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
