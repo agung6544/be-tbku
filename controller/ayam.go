@@ -75,7 +75,7 @@ func GetAyamID(c *fiber.Ctx) error {
 // @Tags Ayam
 // @Accept json
 // @Produce json
-// @Param request body Ayam true "Payload Body [RAW]"
+// @Param request body ReqAyam true "Payload Body [RAW]"
 // @Success 200 {object} Ayam
 // @Failure 400
 // @Failure 500
