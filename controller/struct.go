@@ -17,9 +17,9 @@ type Ayam struct {
 type Order struct {
 	ID           	  primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
 	Ayam 	          Ayam               `bson:"ayam,omitempty" json:"ayam,omitempty"`
-	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty"`
-	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty"`
-	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string"`
+	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty" example:"Dimas"`
+	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty" example:"Bandung"`
+	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string" example:"2024-12-03"`
 }
 
 type ReqAyam struct {

@@ -29,12 +29,15 @@ definitions:
       _id:
         type: string
       alamat:
+        example: Bandung
         type: string
       ayam:
         $ref: '#/definitions/controller.Ayam'
       nama_pemesan:
+        example: Dimas
         type: string
       tanggal_pemesanan:
+        example: "2024-12-03"
         type: string
     type: object
   controller.ReqAyam:

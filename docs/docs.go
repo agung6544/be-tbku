@@ -433,16 +433,19 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "alamat": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Bandung"
                 },
                 "ayam": {
                     "$ref": "#/definitions/controller.Ayam"
                 },
                 "nama_pemesan": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Dimas"
                 },
                 "tanggal_pemesanan": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "2024-12-03"
                 }
             }
         },
