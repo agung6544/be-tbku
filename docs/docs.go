@@ -491,7 +491,7 @@ const docTemplate = `{
                 },
                 "tanggal_pemesanan": {
                     "type": "string",
-                    "example": "17/08/1945"
+                    "example": "2024-12-03"
                 }
             }
         }

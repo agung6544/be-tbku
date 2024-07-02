@@ -69,7 +69,7 @@ definitions:
         example: Dimas
         type: string
       tanggal_pemesanan:
-        example: 17/08/1945
+        example: "2024-12-03"
         type: string
     type: object
 host: be-tbku1-179bbc23801d.herokuapp.com
