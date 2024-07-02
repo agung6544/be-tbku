@@ -487,7 +487,7 @@ const docTemplate = `{
                     "example": "Bandung"
                 },
                 "ayam": {
-                    "$ref": "#/definitions/controller.Ayam"
+                    "$ref": "#/definitions/controller.ReqAyam"
                 },
                 "nama_pemesan": {
                     "type": "string",
