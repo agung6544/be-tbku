@@ -4,7 +4,7 @@ import (
 	"github.com/agung6544/be-tbku/controller"
 
 	"github.com/gofiber/fiber/v2"
-	// "github.com/gofiber/swagger" // swagger handler
+	"github.com/gofiber/swagger" // swagger handler
 )
 
 func Web(page *fiber.App) {
@@ -19,5 +19,5 @@ func Web(page *fiber.App) {
 	page.Post("/insorder", controller.InsertDataOrder)
 	page.Put("/uporder/:id", controller.UpdateDataOrder)
 	page.Delete("/delorder/:id", controller.DeleteOrderByID)
-	// page.Get("/docs/*", swagger.HandlerDefault)
+	page.Get("/docs/*", swagger.HandlerDefault)
 }
