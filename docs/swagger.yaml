@@ -24,6 +24,30 @@ definitions:
         example: "123456789"
         type: string
     type: object
+  controller.ReqAyam:
+    properties:
+      _id:
+        example: "123456789"
+        type: string
+      bobot:
+        example: "123456789"
+        type: string
+      harga:
+        example: "12.000"
+        type: string
+      jenis:
+        example: Ayam Saigon
+        type: string
+      jenis_kelamin:
+        example: Jantan
+        type: string
+      tinggi:
+        example: "123456789"
+        type: string
+      umur:
+        example: "123456789"
+        type: string
+    type: object
 host: be-tbku1-179bbc23801d.herokuapp.com
 info:
   contact:
@@ -87,7 +111,7 @@ paths:
         name: request
         required: true
         schema:
-          $ref: '#/definitions/controller.Ayam'
+          $ref: '#/definitions/controller.ReqAyam'
       produces:
       - application/json
       responses:

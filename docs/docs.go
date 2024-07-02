@@ -103,7 +103,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.Ayam"
+                            "$ref": "#/definitions/controller.ReqAyam"
                         }
                     }
                 ],
@@ -126,6 +126,39 @@ const docTemplate = `{
     },
     "definitions": {
         "controller.Ayam": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string",
+                    "example": "123456789"
+                },
+                "bobot": {
+                    "type": "string",
+                    "example": "123456789"
+                },
+                "harga": {
+                    "type": "string",
+                    "example": "12.000"
+                },
+                "jenis": {
+                    "type": "string",
+                    "example": "Ayam Saigon"
+                },
+                "jenis_kelamin": {
+                    "type": "string",
+                    "example": "Jantan"
+                },
+                "tinggi": {
+                    "type": "string",
+                    "example": "123456789"
+                },
+                "umur": {
+                    "type": "string",
+                    "example": "123456789"
+                }
+            }
+        },
+        "controller.ReqAyam": {
             "type": "object",
             "properties": {
                 "_id": {
