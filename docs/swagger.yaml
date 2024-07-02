@@ -37,7 +37,8 @@ definitions:
         example: Dimas
         type: string
       tanggal_pemesanan:
-        example: "2024-12-03"
+        example: "2024-09-01T00:00:00Z"
+        format: date-time
         type: string
     type: object
   controller.ReqAyam:
@@ -72,7 +73,8 @@ definitions:
         example: Dimas
         type: string
       tanggal_pemesanan:
-        example: "2024-12-03"
+        example: "2024-09-01T00:00:00Z"
+        format: date-time
         type: string
     type: object
 host: be-tbku1-179bbc23801d.herokuapp.com

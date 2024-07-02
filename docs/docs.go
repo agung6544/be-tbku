@@ -445,7 +445,8 @@ const docTemplate = `{
                 },
                 "tanggal_pemesanan": {
                     "type": "string",
-                    "example": "2024-12-03"
+                    "format": "date-time",
+                    "example": "2024-09-01T00:00:00Z"
                 }
             }
         },
@@ -494,7 +495,8 @@ const docTemplate = `{
                 },
                 "tanggal_pemesanan": {
                     "type": "string",
-                    "example": "2024-12-03"
+                    "format": "date-time",
+                    "example": "2024-09-01T00:00:00Z"
                 }
             }
         }

@@ -19,7 +19,7 @@ type Order struct {
 	Ayam 	          Ayam               `bson:"ayam,omitempty" json:"ayam,omitempty"`
 	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty" example:"Dimas"`
 	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty" example:"Bandung"`
-	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string" example:"2024-12-03"`
+	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
 }
 
 type ReqAyam struct {
@@ -35,5 +35,5 @@ type ReqOrder struct {
 	Ayam 	          Ayam               `bson:"ayam,omitempty" json:"ayam,omitempty"`
 	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty" example:"Dimas"`
 	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty" example:"Bandung"`
-	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string" example:"2024-12-03"`
+	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
 }
