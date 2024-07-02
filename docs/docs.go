@@ -208,10 +208,6 @@ const docTemplate = `{
         "controller.ReqAyam": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "123456789"
-                },
                 "bobot": {
                     "type": "string",
                     "example": "123456789"

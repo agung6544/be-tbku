@@ -26,9 +26,6 @@ definitions:
     type: object
   controller.ReqAyam:
     properties:
-      _id:
-        example: "123456789"
-        type: string
       bobot:
         example: "123456789"
         type: string

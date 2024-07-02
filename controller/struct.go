@@ -23,7 +23,6 @@ type Order struct {
 }
 
 type ReqAyam struct {
-	ID             primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty" example:"123456789"`
 	Jenis          string             `bson:"jenis,omitempty" json:"jenis,omitempty" example:"Ayam Saigon"`
 	Umur		   string             `bson:"umur,omitempty" json:"umur,omitempty" example:"123456789"`
 	Bobot          string             `bson:"bobot,omitempty" json:"bobot,omitempty" example:"123456789"`
@@ -33,7 +32,6 @@ type ReqAyam struct {
 }
 
 type ReqOrder struct {
-	ID           	  primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
 	Ayam 	          Ayam               `bson:"ayam,omitempty" json:"ayam,omitempty"`
 	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty"`
 	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty"`
