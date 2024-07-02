@@ -19,7 +19,7 @@ type Order struct {
 	Ayam 	          Ayam               `bson:"ayam,omitempty" json:"ayam,omitempty"`
 	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty"`
 	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty"`
-	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty"`
+	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string"`
 }
 
 type ReqAyam struct {

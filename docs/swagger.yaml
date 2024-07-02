@@ -24,6 +24,19 @@ definitions:
         example: "123456789"
         type: string
     type: object
+  controller.Order:
+    properties:
+      _id:
+        type: string
+      alamat:
+        type: string
+      ayam:
+        $ref: '#/definitions/controller.Ayam'
+      nama_pemesan:
+        type: string
+      tanggal_pemesanan:
+        type: string
+    type: object
   controller.ReqAyam:
     properties:
       bobot:
@@ -146,6 +159,21 @@ paths:
       summary: Insert data ayam.
       tags:
       - Ayam
+  /order:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil semua data order.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Order'
+      summary: Get All Data Order.
+      tags:
+      - Order
   /update/{id}:
     put:
       consumes:

@@ -13,7 +13,14 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-
+// GetOrder godoc
+// @Summary Get All Data Order.
+// @Description Mengambil semua data order.
+// @Tags Order
+// @Accept json
+// @Produce json
+// @Success 200 {object} Order
+// @Router /order [get]
 func GetOrder(c *fiber.Ctx) error {
 	ps := cek.GetAllOrder(config.Ulbimongoconn, "orderku")
 	return c.JSON(ps)

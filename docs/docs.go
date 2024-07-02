@@ -158,6 +158,29 @@ const docTemplate = `{
                 }
             }
         },
+        "/order": {
+            "get": {
+                "description": "Mengambil semua data order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Get All Data Order.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Order"
+                        }
+                    }
+                }
+            }
+        },
         "/update/{id}": {
             "put": {
                 "description": "Ubah data ayam.",
@@ -237,6 +260,26 @@ const docTemplate = `{
                 "umur": {
                     "type": "string",
                     "example": "123456789"
+                }
+            }
+        },
+        "controller.Order": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "alamat": {
+                    "type": "string"
+                },
+                "ayam": {
+                    "$ref": "#/definitions/controller.Ayam"
+                },
+                "nama_pemesan": {
+                    "type": "string"
+                },
+                "tanggal_pemesanan": {
+                    "type": "string"
                 }
             }
         },
