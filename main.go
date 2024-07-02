@@ -19,7 +19,7 @@ import (
 // @contact.url https://github.com/agung6544
 // @contact.email 714220039@std.ulbi.ac.id
 
-// @host ws-agung-2024-b77249100221.herokuapp.com
+// @host be-tbku1-179bbc23801d.herokuapp.com
 // @BasePath /
 // @schemes https http
 

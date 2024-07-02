@@ -24,7 +24,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "ws-agung-2024-b77249100221.herokuapp.com",
+	Host:             "be-tbku1-179bbc23801d.herokuapp.com",
 	BasePath:         "/",
 	Schemes:          []string{"https", "http"},
 	Title:            "TES SWAGGER ULBI",
