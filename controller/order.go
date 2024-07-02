@@ -26,7 +26,18 @@ func GetOrder(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-
+// GetOrderID godoc
+// @Summary Get By ID Data Order.
+// @Description Ambil per ID data order.
+// @Tags Order
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Success 200 {object} Order
+// @Failure 400
+// @Failure 404
+// @Failure 500
+// @Router /order/{id} [get]
 func GetOrderID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
@@ -58,7 +69,17 @@ func GetOrderID(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-
+// InsertDataOrder godoc
+// @Summary Insert data order.
+// @Description Input data order.
+// @Tags Order
+// @Accept json
+// @Produce json
+// @Param request body ReqOrder true "Payload Body [RAW]"
+// @Success 200 {object} Order
+// @Failure 400
+// @Failure 500
+// @Router /insorder [post]
 func InsertDataOrder(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var order inimodel.Order
@@ -85,7 +106,18 @@ func InsertDataOrder(c *fiber.Ctx) error {
 	})
 }
 
-
+// UpdateDataOrder godoc
+// @Summary Update data order.
+// @Description Ubah data order.
+// @Tags Order
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Param request body ReqOrder true "Payload Body [RAW]"
+// @Success 200 {object} Order
+// @Failure 400
+// @Failure 500
+// @Router /uporder/{id} [put]
 func UpdateDataOrder(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
@@ -129,7 +161,17 @@ func UpdateDataOrder(c *fiber.Ctx) error {
 	})
 }
 
-
+// DeleteOrderByID godoc
+// @Summary Delete data order.
+// @Description Hapus data order.
+// @Tags Order
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Success 200
+// @Failure 400
+// @Failure 500
+// @Router /delorder/{id} [delete]
 func DeleteOrderByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {

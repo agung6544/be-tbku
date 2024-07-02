@@ -118,6 +118,41 @@ const docTemplate = `{
                 }
             }
         },
+        "/delorder/{id}": {
+            "delete": {
+                "description": "Hapus data order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Delete data order.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Masukan ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
         "/ins": {
             "post": {
                 "description": "Input data ayam.",
@@ -158,6 +193,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/insorder": {
+            "post": {
+                "description": "Input data order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Insert data order.",
+                "parameters": [
+                    {
+                        "description": "Payload Body [RAW]",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.ReqOrder"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Order"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
         "/order": {
             "get": {
                 "description": "Mengambil semua data order.",
@@ -177,6 +252,47 @@ const docTemplate = `{
                         "schema": {
                             "$ref": "#/definitions/controller.Order"
                         }
+                    }
+                }
+            }
+        },
+        "/order/{id}": {
+            "get": {
+                "description": "Ambil per ID data order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Get By ID Data Order.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Masukan ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Order"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -217,6 +333,53 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/controller.Ayam"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/uporder/{id}": {
+            "put": {
+                "description": "Ubah data order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Update data order.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Masukan ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Payload Body [RAW]",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.ReqOrder"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Order"
                         }
                     },
                     "400": {
@@ -309,6 +472,26 @@ const docTemplate = `{
                 "umur": {
                     "type": "string",
                     "example": "123456789"
+                }
+            }
+        },
+        "controller.ReqOrder": {
+            "type": "object",
+            "properties": {
+                "alamat": {
+                    "type": "string",
+                    "example": "Bandung"
+                },
+                "ayam": {
+                    "$ref": "#/definitions/controller.Ayam"
+                },
+                "nama_pemesan": {
+                    "type": "string",
+                    "example": "Dimas"
+                },
+                "tanggal_pemesanan": {
+                    "type": "string",
+                    "example": "17/08/1945"
                 }
             }
         }

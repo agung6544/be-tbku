@@ -58,6 +58,20 @@ definitions:
         example: "123456789"
         type: string
     type: object
+  controller.ReqOrder:
+    properties:
+      alamat:
+        example: Bandung
+        type: string
+      ayam:
+        $ref: '#/definitions/controller.Ayam'
+      nama_pemesan:
+        example: Dimas
+        type: string
+      tanggal_pemesanan:
+        example: 17/08/1945
+        type: string
+    type: object
 host: be-tbku1-179bbc23801d.herokuapp.com
 info:
   contact:
@@ -133,6 +147,29 @@ paths:
       summary: Delete data ayam.
       tags:
       - Ayam
+  /delorder/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Hapus data order.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Delete data order.
+      tags:
+      - Order
   /ins:
     post:
       consumes:
@@ -159,6 +196,32 @@ paths:
       summary: Insert data ayam.
       tags:
       - Ayam
+  /insorder:
+    post:
+      consumes:
+      - application/json
+      description: Input data order.
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/controller.ReqOrder'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Order'
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Insert data order.
+      tags:
+      - Order
   /order:
     get:
       consumes:
@@ -172,6 +235,33 @@ paths:
           schema:
             $ref: '#/definitions/controller.Order'
       summary: Get All Data Order.
+      tags:
+      - Order
+  /order/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Ambil per ID data order.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Order'
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Get By ID Data Order.
       tags:
       - Order
   /update/{id}:
@@ -205,6 +295,37 @@ paths:
       summary: Update data ayam.
       tags:
       - Ayam
+  /uporder/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Ubah data order.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/controller.ReqOrder'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Order'
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Update data order.
+      tags:
+      - Order
 schemes:
 - https
 - http
