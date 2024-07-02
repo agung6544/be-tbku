@@ -69,7 +69,17 @@ func GetAyamID(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-
+// InsertDataAyam godoc
+// @Summary Insert data ayam.
+// @Description Input data ayam.
+// @Tags Ayam
+// @Accept json
+// @Produce json
+// @Param request body Ayam true "Payload Body [RAW]"
+// @Success 200 {object} Ayam
+// @Failure 400
+// @Failure 500
+// @Router /ins [post]
 func InsertDataAyam(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var ayam inimodel.Ayam

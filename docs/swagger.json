@@ -80,6 +80,46 @@
                     }
                 }
             }
+        },
+        "/ins": {
+            "post": {
+                "description": "Input data ayam.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Ayam"
+                ],
+                "summary": "Insert data ayam.",
+                "parameters": [
+                    {
+                        "description": "Payload Body [RAW]",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.Ayam"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Ayam"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -87,25 +127,32 @@
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 },
                 "bobot": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 },
                 "harga": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "12.000"
                 },
                 "jenis": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Ayam Saigon"
                 },
                 "jenis_kelamin": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Jantan"
                 },
                 "tinggi": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 },
                 "umur": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 }
             }
         }

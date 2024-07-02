@@ -5,13 +5,13 @@ import (
 )
 
 type Ayam struct {
-	ID             primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	Jenis          string             `bson:"jenis,omitempty" json:"jenis,omitempty"`
-	Umur		   string             `bson:"umur,omitempty" json:"umur,omitempty"`
-	Bobot          string             `bson:"bobot,omitempty" json:"bobot,omitempty"`
-	Tinggi         string             `bson:"tinggi,omitempty" json:"tinggi,omitempty"`
-	Jenis_Kelamin  string             `bson:"jenis_kelamin,omitempty" json:"jenis_kelamin,omitempty"`
-	Harga		   string             `bson:"harga,omitempty" json:"harga,omitempty"`
+	ID             primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty" example:"123456789"`
+	Jenis          string             `bson:"jenis,omitempty" json:"jenis,omitempty" example:"Ayam Saigon"`
+	Umur		   string             `bson:"umur,omitempty" json:"umur,omitempty" example:"123456789"`
+	Bobot          string             `bson:"bobot,omitempty" json:"bobot,omitempty" example:"123456789"`
+	Tinggi         string             `bson:"tinggi,omitempty" json:"tinggi,omitempty" example:"123456789"`
+	Jenis_Kelamin  string             `bson:"jenis_kelamin,omitempty" json:"jenis_kelamin,omitempty" example:"Jantan"`
+	Harga		   string             `bson:"harga,omitempty" json:"harga,omitempty" example:"12.000"`
 }
 
 type Order struct {
