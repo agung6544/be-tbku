@@ -42,6 +42,33 @@ paths:
       summary: Get All Data Ayam.
       tags:
       - Ayam
+  /ayam/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Ambil per ID data ayam.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Ayam'
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Get By ID Data Ayam.
+      tags:
+      - Ayam
 schemes:
 - https
 - http
