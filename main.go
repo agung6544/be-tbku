@@ -9,6 +9,9 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+
+	_ "github.com/agung6544/be-tbku/docs"
+
 )
 
 // @title TES SWAGGER ULBI
