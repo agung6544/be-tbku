@@ -116,7 +116,7 @@ func InsertDataAyam(c *fiber.Ctx) error {
 // @Accept json
 // @Produce json
 // @Param id path string true "Masukan ID"
-// @Param request body Ayam true "Payload Body [RAW]"
+// @Param request body ReqAyam true "Payload Body [RAW]"
 // @Success 200 {object} Ayam
 // @Failure 400
 // @Failure 500

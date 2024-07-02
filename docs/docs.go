@@ -150,7 +150,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.Ayam"
+                            "$ref": "#/definitions/controller.ReqAyam"
                         }
                     }
                 ],
