@@ -167,7 +167,17 @@ func UpdateData(c *fiber.Ctx) error {
 	})
 }
 
-
+// DeleteAyamByID godoc
+// @Summary Delete data ayam.
+// @Description Hapus data ayam.
+// @Tags Ayam
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Success 200
+// @Failure 400
+// @Failure 500
+// @Router /delete/{id} [delete]
 func DeleteAyamByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {

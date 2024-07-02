@@ -83,6 +83,41 @@ const docTemplate = `{
                 }
             }
         },
+        "/delete/{id}": {
+            "delete": {
+                "description": "Hapus data ayam.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Ayam"
+                ],
+                "summary": "Delete data ayam.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Masukan ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
         "/ins": {
             "post": {
                 "description": "Input data ayam.",
