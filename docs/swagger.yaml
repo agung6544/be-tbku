@@ -1,4 +1,22 @@
 basePath: /
+definitions:
+  controller.Ayam:
+    properties:
+      _id:
+        type: string
+      bobot:
+        type: string
+      harga:
+        type: string
+      jenis:
+        type: string
+      jenis_kelamin:
+        type: string
+      tinggi:
+        type: string
+      umur:
+        type: string
+    type: object
 host: be-tbku1-179bbc23801d.herokuapp.com
 info:
   contact:
@@ -8,7 +26,22 @@ info:
   description: This is a sample swagger for Fiber
   title: TES SWAGGER ULBI
   version: "1.0"
-paths: {}
+paths:
+  /ayam:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil semua data ayam.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Ayam'
+      summary: Get All Data Ayam.
+      tags:
+      - Ayam
 schemes:
 - https
 - http

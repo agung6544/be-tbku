@@ -18,7 +18,59 @@ const docTemplate = `{
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {}
+    "paths": {
+        "/ayam": {
+            "get": {
+                "description": "Mengambil semua data ayam.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Ayam"
+                ],
+                "summary": "Get All Data Ayam.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Ayam"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controller.Ayam": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "bobot": {
+                    "type": "string"
+                },
+                "harga": {
+                    "type": "string"
+                },
+                "jenis": {
+                    "type": "string"
+                },
+                "jenis_kelamin": {
+                    "type": "string"
+                },
+                "tinggi": {
+                    "type": "string"
+                },
+                "umur": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it

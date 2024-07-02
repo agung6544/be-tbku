@@ -13,7 +13,14 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-
+// GetAyam godoc
+// @Summary Get All Data Ayam.
+// @Description Mengambil semua data ayam.
+// @Tags Ayam
+// @Accept json
+// @Produce json
+// @Success 200 {object} Ayam
+// @Router /ayam [get]
 func GetAyam(c *fiber.Ctx) error {
 	ps := cek.GetAllAyam(config.Ulbimongoconn, "ayamku")
 	return c.JSON(ps)
