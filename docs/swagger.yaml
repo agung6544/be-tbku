@@ -126,6 +126,37 @@ paths:
       summary: Insert data ayam.
       tags:
       - Ayam
+  /update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Ubah data ayam.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/controller.Ayam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Ayam'
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Update data ayam.
+      tags:
+      - Ayam
 schemes:
 - https
 - http

@@ -109,7 +109,18 @@ func InsertDataAyam(c *fiber.Ctx) error {
 	})
 }
 
-
+// UpdateData godoc
+// @Summary Update data ayam.
+// @Description Ubah data ayam.
+// @Tags Ayam
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Param request body Ayam true "Payload Body [RAW]"
+// @Success 200 {object} Ayam
+// @Failure 400
+// @Failure 500
+// @Router /update/{id} [put]
 func UpdateData(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
