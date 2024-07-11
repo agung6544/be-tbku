@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/agung6544/be-tbku/config"
 	inimodel "github.com/agung6544/packagetbku/model"
@@ -144,16 +145,22 @@ func UpdateData(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
+	// Convert int fields to string
+	umurStr := strconv.Itoa(ayam.Umur)
+	bobotStr := strconv.Itoa(ayam.Bobot)
+	tinggiStr := strconv.Itoa(ayam.Tinggi)
+	hargaStr := strconv.Itoa(ayam.Harga)
 
 	// Call the UpdateAyam function with the parsed ID and the Ayam object
 	err = cek.UpdateAyam(db, "ayamku",
 		objectID,
 		ayam.Jenis,
-		ayam.Umur,
-		ayam.Bobot,
-		ayam.Tinggi,
+		umurStr,
+		bobotStr,
+		tinggiStr,
 		ayam.Jenis_Kelamin,
-		ayam.Harga)
+		hargaStr)
+
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
