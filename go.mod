@@ -3,7 +3,7 @@ module github.com/agung6544/be-tbku
 go 1.22.3
 
 require (
-	github.com/agung6544/packagetbku v0.0.4
+	github.com/agung6544/packagetbku v0.0.5
 	github.com/aiteung/atdb v0.1.7
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/swaggo/swag v1.16.3
