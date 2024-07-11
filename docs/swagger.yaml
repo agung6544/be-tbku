@@ -6,11 +6,11 @@ definitions:
         example: "123456789"
         type: string
       bobot:
-        example: "123456789"
-        type: string
+        example: 123456789
+        type: integer
       harga:
-        example: "12.000"
-        type: string
+        example: 12000
+        type: integer
       jenis:
         example: Ayam Saigon
         type: string
@@ -18,11 +18,11 @@ definitions:
         example: Jantan
         type: string
       tinggi:
-        example: "123456789"
-        type: string
+        example: 123456789
+        type: integer
       umur:
-        example: "123456789"
-        type: string
+        example: 123456789
+        type: integer
     type: object
   controller.Order:
     properties:
@@ -44,11 +44,11 @@ definitions:
   controller.ReqAyam:
     properties:
       bobot:
-        example: "123456789"
-        type: string
+        example: 123456789
+        type: integer
       harga:
-        example: "12.000"
-        type: string
+        example: 12000
+        type: integer
       jenis:
         example: Ayam Saigon
         type: string
@@ -56,11 +56,11 @@ definitions:
         example: Jantan
         type: string
       tinggi:
-        example: "123456789"
-        type: string
+        example: 123456789
+        type: integer
       umur:
-        example: "123456789"
-        type: string
+        example: 123456789
+        type: integer
     type: object
   controller.ReqOrder:
     properties:

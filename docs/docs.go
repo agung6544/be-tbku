@@ -401,12 +401,12 @@ const docTemplate = `{
                     "example": "123456789"
                 },
                 "bobot": {
-                    "type": "string",
-                    "example": "123456789"
+                    "type": "integer",
+                    "example": 123456789
                 },
                 "harga": {
-                    "type": "string",
-                    "example": "12.000"
+                    "type": "integer",
+                    "example": 12000
                 },
                 "jenis": {
                     "type": "string",
@@ -417,12 +417,12 @@ const docTemplate = `{
                     "example": "Jantan"
                 },
                 "tinggi": {
-                    "type": "string",
-                    "example": "123456789"
+                    "type": "integer",
+                    "example": 123456789
                 },
                 "umur": {
-                    "type": "string",
-                    "example": "123456789"
+                    "type": "integer",
+                    "example": 123456789
                 }
             }
         },
@@ -454,12 +454,12 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "bobot": {
-                    "type": "string",
-                    "example": "123456789"
+                    "type": "integer",
+                    "example": 123456789
                 },
                 "harga": {
-                    "type": "string",
-                    "example": "12.000"
+                    "type": "integer",
+                    "example": 12000
                 },
                 "jenis": {
                     "type": "string",
@@ -470,12 +470,12 @@ const docTemplate = `{
                     "example": "Jantan"
                 },
                 "tinggi": {
-                    "type": "string",
-                    "example": "123456789"
+                    "type": "integer",
+                    "example": 123456789
                 },
                 "umur": {
-                    "type": "string",
-                    "example": "123456789"
+                    "type": "integer",
+                    "example": 123456789
                 }
             }
         },
